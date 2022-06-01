@@ -7,22 +7,10 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class UserManager: ObservableObject {
-  @Published var isRegister: Bool {
-    didSet {
-      UserDefaults.standard.set(isRegister, forKey: "isRegister")
-    }
-  }
-  @Published var name: String {
-    didSet {
-      UserDefaults.standard.set(name, forKey: "userName")
-    }
-  }
-  
-  init() {
-    self.isRegister = UserDefaults.standard.bool(forKey: "isRegister")
-    self.name = UserDefaults.standard.string(forKey: "userName")!
-  }
+  @Published var isRegister = false
+  @Published var name = ""
 }
 
