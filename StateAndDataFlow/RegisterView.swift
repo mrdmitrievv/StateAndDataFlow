@@ -30,7 +30,7 @@ struct RegisterView: View {
       .disabled(charactersCounter >= 3 ? false : true)
     }
   }
-  
+   
   private func registerUser() {
     if !name.isEmpty && charactersCounter >= 3 {
       user.name = name

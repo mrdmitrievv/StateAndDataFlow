@@ -14,10 +14,14 @@ class UserManager: ObservableObject {
       UserDefaults.standard.set(isRegister, forKey: "isRegister")
     }
   }
-  @Published var name: String {
+  var name: String {
     didSet {
       UserDefaults.standard.set(name, forKey: "userName")
     }
+  }
+  
+  var userNameCount: Bool {
+    name.count >= 3
   }
   
   init() {
